@@ -130,6 +130,19 @@ denominador = total_analfabeto * V1032
 2016 - 10-20 30-40 50-60 80-90
 
 
+### alfabetização
+
+definir as gerações a partir dos anos de nascimento
+
+gráfico ao longo dos anos 
+gráficos ao longo das idades
+
+
+
+
+
+
+
 
 
 
