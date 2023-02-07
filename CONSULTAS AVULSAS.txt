@@ -1,0 +1,44 @@
+MARCSON AZEVEDO
+PRIMEIRAS COLETAS NO DREMIO
+IBGE - PNADC - 2021 - POBREZA
+
+TAMANHO DA POPULACAO UF 11  - ok
+
+SELECT SUM(V1032) AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2021 AND tabela.UF = 11
+
+
+TAMANHO DA POPULACAO PARA DENOMINADOR DE POBREZA - ok
+
+SELECT SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2021 AND tabela.UF = 11
+
+
+PARA UF 11 - POBREZA - ok
+
+SELECT SUM(percentual_pobreza_ipea_ibge_cepal_numerador) AS num, SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS den, (SUM(percentual_pobreza_ipea_ibge_cepal_numerador)/ SUM(percentual_pobreza_ipea_ibge_cepal_denominador) ) AS percentual_pobres
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2021 AND tabela.UF = 11
+
+PARA UF 32 - POBREZA - por sexo - ok
+ 
+SELECT SUM(percentual_pobreza_ipea_ibge_cepal_numerador) AS num, SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS den, (SUM(percentual_pobreza_ipea_ibge_cepal_numerador)/ SUM(percentual_pobreza_ipea_ibge_cepal_denominador) ) AS percentual_pobres
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2021 AND tabela.UF = 32
+GROUP BY tabela.V2007
+
+BR - POBREZA - 2021 - ok
+
+SELECT SUM(percentual_pobreza_ipea_ibge_cepal_numerador) AS num, SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS den, (SUM(percentual_pobreza_ipea_ibge_cepal_numerador)/ SUM(percentual_pobreza_ipea_ibge_cepal_denominador) ) AS percentual_pobres
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2021
+
+
+BR - 0 A 17 - POBREZA - 2021 - ok
+SELECT SUM(percentual_pobreza_ipea_ibge_cepal_numerador) AS num, SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS den, (SUM(percentual_pobreza_ipea_ibge_cepal_numerador)/ SUM(percentual_pobreza_ipea_ibge_cepal_denominador) ) AS percentual_pobres
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2021 AND tabela.V2009 BETWEEN 0 AND 17
+
+
