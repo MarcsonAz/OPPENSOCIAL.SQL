@@ -139,8 +139,37 @@ gráficos ao longo das idades
 
 
 
+#################### 
+POBREZA
+#################### 
+
+COLOCAR TODOS OS INDICADORES NO 3 AGREGA DE CADA BASE
+VALIDAR AMOSTRA > 100 - FAZER PLANILHA COM GRUPOS PARA CADA GRANULARIDADE - BR, GR E UF
+CRIAR O ENTREGAVEL PAINEL
+
+#################### 
+POBREZA
+#################### 
 
 
+#################### 
+DESAFIO ANALFABETISMO
+#################### 
+
+REVISAR GERACAO
+CRIAR ENTREGAVEL
+PRENDER A TABELA DINAMICA
+CRIAR GRAFICOS
+
+definir as gerações a partir dos anos de nascimento
+
+gráfico ao longo dos anos 
+gráficos ao longo das idades
+
+
+#################### 
+DESAFIO ANALFABETISMO
+#################### 
 
 
 
