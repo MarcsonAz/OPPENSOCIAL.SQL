@@ -173,6 +173,31 @@ DESAFIO ANALFABETISMO
 
 
 
+/*
+agrupar por ano, regiao, uf, raca, sexo e faixas etarias 
+ano	regiao_descricao	regiao	uf_descricao	uf_descricao_mapa	uf_sigla	uf	raca_cor	rural_urbana	sexo	faixa_etaria1	faixa_etaria2	faixa_etaria3	faixa_etaria4	faixa_etaria5
+*/
 
+SELECT 
+ano,regiao_descricao,regiao,uf_descricao,uf_descricao_mapa,uf_sigla,uf,raca_cor,rural_urbana,sexo,
+faixa_etaria1, faixa_etaria2,faixa_etaria3,faixa_etaria4,faixa_etaria5,
+
+SUM(percentual_extrema_pobreza_ipea_ibge_cepal_numerador) AS percentual_ipea_ibge_cepal_extrema_pobreza_numerador,
+SUM(percentual_extrema_pobreza_ipea_ibge_cepal_denominador) AS percentual_ipea_ibge_cepal_extrema_pobreza_denominador,
+
+SUM(percentual_pobreza_ipea_ibge_cepal_numerador) AS percentual_ipea_ibge_cepal_pobreza_numerador,
+SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS percentual_ipea_ibge_cepal_pobreza_denominador,
+
+SUM(hiato_extrema_pobreza_ipea_ibge_cepal_nao_normalizado_numerador) AS hiato_ipea_ibge_cepal_extrema_pobreza_numerador,
+SUM(hiato_extrema_pobreza_ipea_ibge_cepal_nao_normalizado_denominador) AS hiato_ipea_ibge_cepal_extrema_pobreza_denominador,
+
+SUM(V1032) AS numero_pessoas,
+COUNT(*) AS numero_observacoes
+
+FROM "Imds Projetos"."pobreza criancas adolescentes onda 1 magnitude"."- PNADC Anual Visita 5"."2 features".tabela
+
+GROUP BY 
+ano,regiao_descricao,regiao,uf_descricao,uf_descricao_mapa,uf_sigla,uf,raca_cor,rural_urbana,sexo,
+faixa_etaria1, faixa_etaria2,faixa_etaria3,faixa_etaria4,faixa_etaria5
 
 
