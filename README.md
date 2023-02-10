@@ -26,135 +26,61 @@ DESAFIO - TAXA DE ANALFABETISMO - >
 TESTES EM 2019 PARA COMPARAR COM PUBLICACAO DO IBGE
 https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/18317-educacao.html#:~:text=Um%20dado%20importante%20sobre%20educa%C3%A7%C3%A3o,(11%20milh%C3%B5es%20de%20analfabetos).
 
-TESTE 1 - ... sabe ler e escrever? V1
+*** Revisar o tratamnto do material de analfbetismo ***
 
-SELECT V3001, ROUND(SUM(V1032)) AS pop
-FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 1".tabela
-WHERE tabela.ANO = 2019
-GROUP BY V3001
-- 15.186.206
+## 08/02 - Terceiro Dia
 
+PROJETO POBREZA - DASHBOARD MAGNITUDE DA POBREZA
 
-TESTE 1 - ... sabe ler e escrever? V5
+Objetivo de construir a estrutura e calcular os indicadores do painel da onda 1 de pobreza
 
-SELECT V3001, ROUND(SUM(V1032)) AS pop
-FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
-WHERE tabela.ANO = 2019
-GROUP BY V3001
+As views do projeto estão na pasta do projeto
 
-- 15.589.414
+Calculados os indicadores, foram construídos dois entregáveis:
+    uma tabela dinâmica com todos os dados para verificação dos resultados e para a análise da amotra que será realizada posteriormente
+    (foi aberta a categoria de cor ou raça)
 
-DESAFIO - TAXA DE ANALFABETISMO - > 15 ANOS -
-
-TESTE 2 - ... sabe ler e escrever? V1
-
-SELECT V3001, ROUND(SUM(V1032))/1000 AS pop
-FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 1".tabela
-WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
-GROUP BY V3001
-
-V3001	pop
-1	154942.441
-2	10387.385
-
-TESTE 2 - ... sabe ler e escrever? V5
-
-SELECT V3001, ROUND(SUM(V1032))/1000 AS pop
-FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
-WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
-GROUP BY V3001
-
-V3001	pop
-2	11035.535
-1	157008.47
-
-TESTE 2 - ... sabe ler e escrever? V5 - 2016
-
-SELECT V3001, ROUND(SUM(V1032))/1000 AS pop
-FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
-WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
-GROUP BY V3001
+    um painel de indicadores com as especificações
 
 
-TESTE 3 - V1 2019 com derivadas - VD3004 e VD3005
+## 09/02 - Quarto Dia
 
-SELECT VD3004, ROUND(SUM(V1032))/1000 AS pop
-FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 1".tabela
-WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
-GROUP BY VD3004
-- 
+PROJETO POBREZA - DASHBOARD MAGNITUDE DA POBREZA
+
+Validação dos dados, atualização de detalhes no painel de indicadores
+
+PROJETO POBREZA - DASHBOARD CONDIÇÕES PARA O DESENVOLVIMENTO DE HABILIDADES
+
+Compreensão dos materiais de apoio e do resultado desejado
+Estruturação do projeto no Dreamio
+Início do cálculo de indicadores
+
+
+## 10/02 - Quinto Dia
+
+Atualização do github com mais textos de apoio e construção da estrutura dos projetos de pobreza aplicada no Dremio
+
+PROJETO POBREZA - DASHBOARD CONDIÇÕES PARA O DESENVOLVIMENTO DE HABILIDADES
+
+Compreensão dos materiais de apoio e do resultado desejado
+Estruturação do projeto no Dreamio
+Início do cálculo de indicadores
 
 
 
 
-DEFINICAO ANALFABETO
-
-eh analfabeto - 15 anos ou mais e não sabe ler ou escrever
-nao eh analfabeto - 15 anos ou mais e sabe ler e escrever
-nao conta - nao respondeu se sabe ler ou escrever ou tem menos de 15 anos
-
-
-ANALFABETOS POR ANO
-POR REGIAO
-
-
-
-calcular o numerador e denominador do 
-
-percentual de analfabetos
-
-
-por regiao e por ano
 
 
 
 
-criar o percentual
 
-numerador = analfabeto * V1032
-denominador = total_analfabeto * V1032
-
-
-3 view no 4 junta
-
-1 - serie, 2012 a 2019 v1 e 2020 e 2021 v5
-2 - v1
-3 - v5
-
-
-
-2012 - 10-20 30-40 50-60 80-90
-2013 - 10-20 30-40 50-60 80-90
-2014 - 10-20 30-40 50-60 80-90
-2015 - 10-20 30-40 50-60 80-90
-2016 - 10-20 30-40 50-60 80-90
-
-
-### alfabetização
+### retomada da discussao de alfabetização
 
 definir as gerações a partir dos anos de nascimento
 
 gráfico ao longo dos anos 
 gráficos ao longo das idades
 
-
-
-#################### 
-POBREZA
-#################### 
-
-COLOCAR TODOS OS INDICADORES NO 3 AGREGA DE CADA BASE
-VALIDAR AMOSTRA > 100 - FAZER PLANILHA COM GRUPOS PARA CADA GRANULARIDADE - BR, GR E UF
-CRIAR O ENTREGAVEL PAINEL
-
-#################### 
-POBREZA
-#################### 
-
-
-#################### 
-DESAFIO ANALFABETISMO
-#################### 
 
 REVISAR GERACAO
 CRIAR ENTREGAVEL
@@ -167,11 +93,15 @@ gráfico ao longo dos anos
 gráficos ao longo das idades
 
 
-#################### 
-DESAFIO ANALFABETISMO
-#################### 
+### detalhes dashboard pobreza
+
+COLOCAR TODOS OS INDICADORES NO 3 AGREGA DE CADA BASE
+VALIDAR AMOSTRA > 100 - FAZER PLANILHA COM GRUPOS PARA CADA GRANULARIDADE - BR, GR E UF
+CRIAR O ENTREGAVEL PAINEL
 
 
+
+### SQL
 
 /*
 agrupar por ano, regiao, uf, raca, sexo e faixas etarias 
@@ -191,7 +121,7 @@ SUM(percentual_pobreza_ipea_ibge_cepal_denominador) AS percentual_ipea_ibge_cepa
 SUM(hiato_extrema_pobreza_ipea_ibge_cepal_nao_normalizado_numerador) AS hiato_ipea_ibge_cepal_extrema_pobreza_numerador,
 SUM(hiato_extrema_pobreza_ipea_ibge_cepal_nao_normalizado_denominador) AS hiato_ipea_ibge_cepal_extrema_pobreza_denominador,
 
-SUM(V1032) AS numero_pessoas,
+SUM(V1032) AS peso_pessoas,
 COUNT(*) AS numero_observacoes
 
 FROM "Imds Projetos"."pobreza criancas adolescentes onda 1 magnitude"."- PNADC Anual Visita 5"."2 features".tabela

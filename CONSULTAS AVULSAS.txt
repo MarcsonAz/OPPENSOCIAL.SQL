@@ -72,6 +72,69 @@ WHERE tabela.ANO = 2015
 
 
 
+## TESTES PARA APRENDIZADO NO DREAMIO
+
+
+TESTE 1 - ... sabe ler e escrever? V1
+
+SELECT V3001, ROUND(SUM(V1032)) AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 1".tabela
+WHERE tabela.ANO = 2019
+GROUP BY V3001
+- 15.186.206
+
+
+TESTE 1 - ... sabe ler e escrever? V5
+
+SELECT V3001, ROUND(SUM(V1032)) AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2019
+GROUP BY V3001
+
+- 15.589.414
+
+DESAFIO - TAXA DE ANALFABETISMO - > 15 ANOS -
+
+TESTE 2 - ... sabe ler e escrever? V1
+
+SELECT V3001, ROUND(SUM(V1032))/1000 AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 1".tabela
+WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
+GROUP BY V3001
+
+V3001	pop
+1	154942.441
+2	10387.385
+
+TESTE 2 - ... sabe ler e escrever? V5
+
+SELECT V3001, ROUND(SUM(V1032))/1000 AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
+GROUP BY V3001
+
+V3001	pop
+2	11035.535
+1	157008.47
+
+TESTE 2 - ... sabe ler e escrever? V5 - 2016
+
+SELECT V3001, ROUND(SUM(V1032))/1000 AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 5".tabela
+WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
+GROUP BY V3001
+
+
+TESTE 3 - V1 2019 com derivadas - VD3004 e VD3005
+
+SELECT VD3004, ROUND(SUM(V1032))/1000 AS pop
+FROM "Repositorio Oficial Features".ibge.pnadc.pessoas.anual."visita 1".tabela
+WHERE tabela.ANO = 2019 AND tabela.V2009 >= 15
+GROUP BY VD3004
+- 
+
+
+
 
 
 
